@@ -20,11 +20,18 @@ class _$AppRouter extends RootStackRouter {
     InitialRoute.name: (routeData) {
       return AdaptivePage<dynamic>(
           routeData: routeData, child: const InitialPage());
+    },
+    MainRoute.name: (routeData) {
+      return AdaptivePage<dynamic>(
+          routeData: routeData, child: const MainPage());
     }
   };
 
   @override
-  List<RouteConfig> get routes => [RouteConfig(InitialRoute.name, path: '/')];
+  List<RouteConfig> get routes => [
+        RouteConfig(InitialRoute.name, path: '/'),
+        RouteConfig(MainRoute.name, path: '/main-page')
+      ];
 }
 
 /// generated route for
@@ -33,4 +40,12 @@ class InitialRoute extends PageRouteInfo<void> {
   const InitialRoute() : super(InitialRoute.name, path: '/');
 
   static const String name = 'InitialRoute';
+}
+
+/// generated route for
+/// [MainPage]
+class MainRoute extends PageRouteInfo<void> {
+  const MainRoute() : super(MainRoute.name, path: '/main-page');
+
+  static const String name = 'MainRoute';
 }
